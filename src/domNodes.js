@@ -1,3 +1,5 @@
+import faRedo from './faLibrary';
+
 const initial = () => {
   const fragment = document.createDocumentFragment();
 
@@ -6,7 +8,7 @@ const initial = () => {
     'Try to guess the secret code. Any combination of keyboard keys is valid';
 
   const waitingIndicator = document.createElement('div');
-  waitingIndicator.textContent = 'keep trying';
+  waitingIndicator.classList.add('waiting-indicator');
 
   fragment.append(callToAction, waitingIndicator);
 
@@ -20,7 +22,10 @@ const success = () => {
   successMessage.textContent = 'Success!';
 
   const refreshButton = document.createElement('button');
-  refreshButton.textContent = 'refresh';
+  refreshButton.innerHTML = faRedo;
+  refreshButton.autofocus = true;
+  refreshButton.classList.add('refresh-btn');
+  refreshButton.addEventListener('click', () => window.location.reload());
 
   fragment.append(successMessage, refreshButton);
 
@@ -29,6 +34,7 @@ const success = () => {
 
 export const wrapped = (child) => {
   const container = document.createElement('div');
+  container.classList.add('container');
   if (child) {
     container.appendChild(child);
   }

@@ -1,10 +1,12 @@
 {
   "scripts": {
     "dev": "parcel public/index.html",
-    "build": "parcel build public/index.html",
+    "build": "parcel build public/index.html --experimental-scope-hoisting",
     "test": "jest"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
