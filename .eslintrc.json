@@ -7,14 +7,14 @@
   "rules": {
     "prettier/prettier": "warn",
     "no-console": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-param-reassign": ["error", { "props": false }]
   },
   "overrides": [
     {
       "files": ["**/*.test.js"],
       "env": {
-        "jest": true,
-        "browser": false
+        "jest": true
       },
       "plugins": ["jest"]
     }
